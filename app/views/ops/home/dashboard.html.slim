@@ -1,2 +1,7 @@
-h1 Home#dashboard
-p Find me in app/views/ops/home/dashboard.html.erb
+- @title = t '.title'
+
+h2 #{@title}
+hr
+div class="btn-group" role="group" aria-label="personal"
+  = link_to(t('devise.registrations.edit.title'), root_path, {class: 'btn btn-secondary'})
+  = link_to(t('personal.logs.title'), root_path, {class: 'btn btn-secondary'})

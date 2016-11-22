@@ -1,3 +1,3 @@
 module Ops
-  VERSION = '0.1.0'
+  VERSION = '2016.11.22'
 end
