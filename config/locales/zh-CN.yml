@@ -7,6 +7,16 @@ zh-CN:
     home:
       title: 运维模块
       description: 站点管理工具
+    notices:
+      index:
+        title: 通知列表
+      new:
+        title:
+          添加通知
+      edit:
+        title:
+          编辑通知[%{id}]
+
     site:
       info:
         title: 基本信息

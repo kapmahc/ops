@@ -1,0 +1,6 @@
+h2
+  = @title = t '.title'
+hr
+= simple_form_for @notice do |f|
+  = f.input :body, as: :text
+  = f.button :submit, t('buttons.submit')

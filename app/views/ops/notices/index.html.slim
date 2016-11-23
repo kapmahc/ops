@@ -1,0 +1,7 @@
+h2
+  = @title = t '.title'
+  = link_to t('buttons.new'), new_notice_path, {class: 'btn btn-link'}
+hr
+ul class="list-group"
+  - Notice.order(updated_at: :desc).each do |i|
+    =link_to i.body, edit_notice_path(i), {class: 'list-group-item list-group-item-action'}
