@@ -13,8 +13,8 @@ module Ops
             {label: 'ops.site.status.title', href: 'site_status_path'},
             {label: 'ops.site.engines.title', href: 'site_engines_path'},
             {label: 'ops.site.jobs.title', href: 'sidekiq_web_path', blank: true},
-            {label: 'activerecord.models.ops/notice', href: 'notices_path'},
-            {label: 'activerecord.models.ops/leave_word', href: 'leave_words_path'},
+            {label: 'ops.notices.index.title', href: 'notices_path'},
+            {label: 'ops.leave_words.index.title', href: 'leave_words_path'},
         ]
     }
   end

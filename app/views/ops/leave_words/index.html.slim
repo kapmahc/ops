@@ -1,0 +1,20 @@
+h2
+  = @title = t '.title'
+hr
+table class="table table-bordered table-hover"
+  thead
+    tr
+      th #{t 'activerecord.attributes.leave_word.created_at'}
+      th #{t 'activerecord.attributes.leave_word.email'}
+      th #{t 'activerecord.attributes.leave_word.phone'}
+      th #{t 'activerecord.attributes.leave_word.body'}
+      th #{t 'buttons.manage'}
+  tbody
+    - LeaveWord.all.order(id: :desc).each do |i|
+      tr
+        th scope="row" #{time_ago_in_words i.created_at}
+        td #{i.email}
+        td #{i.phone}
+        td #{i.body}
+        td
+          = render 'shared/btn-remove', url: leave_word_path(i)

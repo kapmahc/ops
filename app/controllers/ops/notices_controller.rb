@@ -1,4 +1,4 @@
-require_dependency "ops/application_controller"
+require_dependency 'ops/application_controller'
 
 module Ops
   class NoticesController < ApplicationController

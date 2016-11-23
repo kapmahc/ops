@@ -9,14 +9,15 @@ zh-CN:
       description: 站点管理工具
     notices:
       index:
-        title: 通知列表
+        title: 站点通知
       new:
         title:
           添加通知
       edit:
-        title:
-          编辑通知[%{id}]
-
+        title: 编辑通知[%{id}]
+    leave_words:
+      index:
+        title: 留言板
     site:
       info:
         title: 基本信息
