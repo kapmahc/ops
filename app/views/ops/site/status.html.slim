@@ -1,0 +1,32 @@
+- @title = t '.title'
+
+div class="row"
+  div class="col-md-6 block"
+    h4 ROR
+    hr
+    ul class="list-group"
+      li class="list-group-item" #{RUBY_DESCRIPTION}
+      li class="list-group-item" Rails: #{Rails.version}
+      li class="list-group-item" Root: #{Rails.root}
+      li class="list-group-item" Env: #{Rails.env}
+
+  div class="col-md-6 block"
+    h4 OS
+    hr
+    ul class="list-group"
+      li class="list-group-item" #{`uname -a`}
+      li class="list-group-item" #{raw `free -m`.split("\n").join('<br/>')}
+      li class="list-group-item" #{raw `df -h`.split("\n").join('<br/>')}
+
+  div class="col-md-6 block"
+    h4 CACHE
+    hr
+    ul class="list-group"
+      - Redis.new.info.each do |k, v|
+        li class="list-group-item" #{k} = #{v}
+
+  div class="col-md-6 block"
+    h4 DATABASE
+    hr
+    ul class="list-group"
+      li class="list-group-item" #{@db['username']}@#{@db['host']}:#{@db['port']}/#{@db['database']}
