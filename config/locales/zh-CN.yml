@@ -10,10 +10,19 @@ zh-CN:
     site:
       info:
         title: 基本信息
+        form:
+          title: 主标题
+          sub_title: 副标题
+          author: 作者
+          keywords: 关键字
+          description: 说明
+          copyright: 版权
       engines:
         title: 模块列表
       seo:
         title: 搜索引擎
+        google_verify_code: 谷歌ID
+        baidu_verify_code: 百度ID
       status:
         title: 当前状态
       jobs:

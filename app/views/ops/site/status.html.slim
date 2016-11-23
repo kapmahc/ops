@@ -30,3 +30,4 @@ div class="row"
     hr
     ul class="list-group"
       li class="list-group-item" #{@db['username']}@#{@db['host']}:#{@db['port']}/#{@db['database']}
+      /li class="list-group-item" #{ActiveRecord::Base.connection_pool.stat}

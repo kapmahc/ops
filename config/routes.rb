@@ -14,6 +14,6 @@ Ops::Engine.routes.draw do
     mount Sidekiq::Web => '/jobs'
   end
 
-  root 'site#status'
+  root 'site#engines'
 
 end

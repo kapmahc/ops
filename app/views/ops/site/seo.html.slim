@@ -1,0 +1,7 @@
+h2
+  = @title = t '.title'
+hr
+= simple_form_for :seo, { url: site_seo_path } do |f|
+  = f.input :google_verify_code, label: t('.google_verify_code'), input_html:{value: Setting.google_verify_code}
+  = f.input :baidu_verify_code, label: t('.baidu_verify_code'), input_html:{value: Setting.baidu_verify_code}
+  = f.button :submit, t('buttons.submit')

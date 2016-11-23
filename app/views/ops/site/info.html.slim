@@ -1,2 +1,10 @@
-h1 Site#base
-p Find me in app/views/ops/site/base.html.erb
+h2
+  = @title = t '.title'
+hr
+= simple_form_for :info, { url: site_info_path } do |f|
+  = f.input :title, label: t('.form.title'), input_html:{value: Setting.site_info(:title)}
+  = f.input :sub_title, label: t('.form.sub_title'), input_html:{value: Setting.site_info(:sub_title)}
+  = f.input :author, label: t('.form.author'), input_html:{value: Setting.site_info(:author)}
+  = f.input :description, as: :text, label: t('.form.description'), input_html:{value: Setting.site_info(:description)}
+  = f.input :copyright, label: t('.form.copyright'), input_html:{value: Setting.site_info(:copyright)}
+  = f.button :submit, t('buttons.submit')
