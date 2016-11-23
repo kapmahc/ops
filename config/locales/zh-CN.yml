@@ -1,8 +1,4 @@
 zh-CN:
-  activerecord:
-    models:
-      ops/notice: 站点通知
-      ops/leave_word: 留言板
   ops:
     home:
       title: 运维模块
