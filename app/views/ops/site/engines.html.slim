@@ -1,0 +1,9 @@
+h2
+  = @title = t '.title'
+hr
+div class="list-group"
+  - Rails.application.config.engines.each do | e |
+    a href="#{send(e.downcase).root_path}" target="_blank" class = "list-group-item list-group-item-action"
+      h5 class="list-group-item-heading" #{t "#{e.downcase}.home.title"}(v#{Object.const_get("#{e}::VERSION")})
+      p class="list-group-item-text" #{t "#{e.downcase}.home.description"}
+

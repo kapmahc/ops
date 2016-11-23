@@ -1,5 +1,22 @@
 zh-CN:
+  activerecord:
+    models:
+      ops/notice: 站点通知
+      ops/leave_word: 留言板
   ops:
     home:
-      dashboard:
-        title: 站点管理
+      title: 运维模块
+      description: 站点管理工具
+    site:
+      info:
+        title: 基本信息
+      engines:
+        title: 模块列表
+      seo:
+        title: 搜索引擎
+      status:
+        title: 当前状态
+      jobs:
+        title: 后台任务
+    dashboard:
+      title: 站点管理
