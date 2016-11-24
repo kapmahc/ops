@@ -5,3 +5,8 @@ hr
   = f.input :google_verify_code, label: t('.google_verify_code'), input_html:{value: Setting.google_verify_code}
   = f.input :baidu_verify_code, label: t('.baidu_verify_code'), input_html:{value: Setting.baidu_verify_code}
   = f.button :submit, t('buttons.submit')
+
+div class="list-group block"
+  = link_to 'Google verify file', main_app.google_verify_path(id:Setting.google_verify_code, locale:nil), target: :_blank, class: 'list-group-item list-group-item-action'
+  = link_to 'Baidu verify file', main_app.baidu_verify_path(id:Setting.baidu_verify_code, locale:nil), target: :_blank, class: 'list-group-item list-group-item-action'
+  = link_to 'robots.txt', main_app.robots_txt_path(locale:nil), target: :_blank, class: 'list-group-item list-group-item-action'
