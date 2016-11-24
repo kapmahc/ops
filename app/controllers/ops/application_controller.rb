@@ -14,12 +14,7 @@ module Ops
 
     protected
     def must_admin!
-      if current_user.nil? || !current_user.is_admin?
-        head :forbidden
-        return false
-      end
-
-      true
+      authorize :dashboard, :update?
     end
 
     def set_locale
