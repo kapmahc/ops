@@ -14,6 +14,9 @@ zh-CN:
     leave_words:
       index:
         title: 留言板
+    users:
+      index:
+        title: 用户列表
     site:
       info:
         title: 基本信息
@@ -25,7 +28,10 @@ zh-CN:
           description: 说明
           copyright: 版权
       engines:
-        title: 模块列表
+        title: 插件列表
+        detail: 详情
+        as_home: 设为主页
+        not_exist: 插件[%{name}]不存在
       seo:
         title: 搜索引擎
         google_verify_code: 谷歌ID

@@ -1,9 +1,20 @@
 h2
   = @title = t '.title'
 hr
-div class="list-group"
-  - Rails.application.config.magnolia['engines'].each do | e |
-    a href="#{send(e.downcase).root_path}" target="_blank" class = "list-group-item list-group-item-action"
-      h5 class="list-group-item-heading" #{t "#{e.downcase}.home.title"}(v#{Object.const_get("#{e}::VERSION")})
-      p class="list-group-item-text" #{t "#{e.downcase}.home.description"}
 
+table class="table table-hover table-bordered"
+  thead
+    tr
+      th #{t '.detail'}
+      th #{t 'buttons.manage'}
+  tbody
+    - Rails.application.config.magnolia['engines'].each do | e |
+      tr
+        td
+          h5 #{t "#{e.downcase}.home.title"}(v#{Object.const_get("#{e}::VERSION")})
+          p #{t "#{e.downcase}.home.description"}
+        td
+          div class="btn-group"
+            a href="#{send(e.downcase).root_path}" target="_blank" class = "btn btn-info" #{t 'buttons.view'}
+            -unless Setting.home == e.downcase
+              =link_to t('.as_home'), site_engines_path(name: e), method: :post, data: { confirm: t('messages.are_you_sure')},  class:'btn btn-danger'

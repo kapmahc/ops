@@ -1,15 +1,19 @@
 require 'sidekiq/web'
 
 Ops::Engine.routes.draw do
+
   scope '/:locale' do
+    resources :users, only: [:index]
+
     resources :notices, except: :show
     resources :leave_words, only:[:index, :destroy]
 
-    %w(status engines).each {|e| get "site/#{e}"}
-    %w(info seo).each do |e|
+    %w(status).each {|e| get "site/#{e}"}
+    %w(info seo engines).each do |e|
       get "site/#{e}"
       post "site/#{e}"
     end
+
   end
 
   authenticate :user, lambda { |u| u.is_admin? } do

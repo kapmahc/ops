@@ -20,6 +20,19 @@ module Ops
       end
     end
 
+    def engines
+      case request.method
+        when 'POST'
+          name = params.fetch(:name)
+          if Rails.application.config.magnolia['engines'].include? name
+            Setting['home'] = name.downcase
+          else
+            flash[:alert] = t('.not_exist', name:name)
+          end
+        else
+      end
+    end
+
     def status
       @db = Rails.configuration.database_configuration[Rails.env]
     end
