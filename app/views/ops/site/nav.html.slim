@@ -1,0 +1,34 @@
+h5 #{@title = t '.title'}
+hr
+= simple_form_for :nav, { url: site_nav_path } do |f|
+  = f.input :loc, label:t('.form.loc'), collection: @locs
+  = f.input :order, label:t('.form.order'), collection: 1..8
+  = f.input :engine, label:t('.form.engine'), collection: Rails.application.config.magnolia['engines']
+  = f.input :label, label:t('.form.label')
+  = f.input :path, label:t('.form.path')
+
+  = f.button :submit, t('buttons.submit')
+
+- @locs.each do |i|
+  br
+  h5 #{t ".form.#{i}"}
+  hr
+  - links = Setting["nav://#{i}"]
+  - unless links.nil?
+    table class="table table-hover table-bordered"
+      thead
+        tr
+          th #{t '.form.order'}
+          th #{t '.form.engine'}
+          th #{t '.form.label'}
+          th #{t '.form.path'}
+          th #{t 'buttons.manage'}
+      tbody
+        -links.each do |j|
+          tr
+            th scope="row" #{j.fetch :order}
+            td #{j.fetch :engine}
+            td #{j.fetch :label}
+            td #{j.fetch :path}
+            td
+              =link_to t('buttons.remove'), site_nav_path(j.merge(loc:i)), method: :put, data: { confirm: t('messages.are_you_sure')},  class:'btn btn-danger'

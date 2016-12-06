@@ -40,5 +40,15 @@ zh-CN:
         title: 当前状态
       jobs:
         title: 后台任务
+      nav:
+        title: 导航栏
+        form:
+          engine: 插件
+          label: 标签ID
+          path: 路径Helper
+          order: 顺序
+          loc: 位置
+          top: 顶部
+          bottom: 底部
     dashboard:
       title: 站点管理

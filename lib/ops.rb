@@ -12,6 +12,7 @@ module Ops
             {label: 'ops.site.seo.title', href: 'site_seo_path'},
             {label: 'ops.site.status.title', href: 'site_status_path'},
             {label: 'ops.site.engines.title', href: 'site_engines_path'},
+            {label: 'ops.site.nav.title', href: 'site_nav_path'},
             {label: 'ops.site.jobs.title', href: 'sidekiq_web_path', blank: true},
             {label: 'ops.notices.index.title', href: 'notices_path'},
             {label: 'ops.leave_words.index.title', href: 'leave_words_path'},

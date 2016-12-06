@@ -13,7 +13,11 @@ Ops::Engine.routes.draw do
       get "site/#{e}"
       post "site/#{e}"
     end
-
+    %w(nav).each do |e|
+      get "site/#{e}"
+      post "site/#{e}"
+      put "site/#{e}"
+    end
   end
 
   authenticate :user, lambda { |u| u.is_admin? } do
