@@ -1,0 +1,7 @@
+h2
+  = @title = t '.title', id:@translation.id
+hr
+= simple_form_for @translation do |f|
+  = f.input :key, readonly:true
+  = f.input :value, as: :text
+  = f.button :submit, t('buttons.submit')

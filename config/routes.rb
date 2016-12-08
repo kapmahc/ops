@@ -3,6 +3,12 @@ require 'sidekiq/web'
 Ops::Engine.routes.draw do
 
   scope '/:locale' do
+    resources :translations, except: :show do
+      collection do
+        post 'reload'
+      end
+    end
+
     resources :users, only: [:index]
 
     resources :notices, except: :show

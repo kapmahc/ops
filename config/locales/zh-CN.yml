@@ -50,5 +50,12 @@ zh-CN:
           loc: 位置
           top: 顶部
           bottom: 底部
+    translations:
+      index:
+        title: 在线翻译
+      new:
+        title: 新增翻译条目
+      edit:
+        title: 编辑翻译条目[%{id}]
     dashboard:
       title: 站点管理

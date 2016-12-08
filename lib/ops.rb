@@ -16,6 +16,7 @@ module Ops
             {label: 'ops.site.jobs.title', href: 'sidekiq_web_path', blank: true},
             {label: 'ops.notices.index.title', href: 'notices_path'},
             {label: 'ops.leave_words.index.title', href: 'leave_words_path'},
+            {label: 'ops.translations.index.title', href: 'translations_path'},
             {label: 'ops.users.index.title', href: 'users_path'},
         ]
     }

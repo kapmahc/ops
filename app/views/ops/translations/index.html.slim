@@ -1,0 +1,24 @@
+h2 #{@title = t '.title'}
+hr
+
+table class="table table-hover table-bordered"
+  thead
+    tr
+      th #{t 'activerecord.attributes.translation.key'}
+      th #{t 'activerecord.attributes.translation.value'}
+      th
+        = t 'buttons.manage'
+        | &nbsp;
+        = link_to t('buttons.new'), new_translation_path
+        | &nbsp;
+        = link_to t('buttons.reload'), reload_translations_path, method: :post
+  tbody
+    - @translations.each do |i|
+      tr
+        td #{i.key}
+        td #{i.value}
+        td
+          div class="btn-group btn-group-sm"
+            =link_to t('buttons.edit'), edit_translation_path(i), class:'btn btn-warning'
+            =render 'shared/btn-remove', url:translation_path(i)
+
