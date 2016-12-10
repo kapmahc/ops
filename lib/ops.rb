@@ -1,9 +1,9 @@
 require 'ops/engine'
 
 module Ops
-  def Ops.dashboard(user)
+  def self.dashboard(user)
     unless user.is_admin?
-        return nil
+      return nil
     end
     {
         label: 'ops.dashboard.title',
@@ -20,5 +20,9 @@ module Ops
             {label: 'ops.users.index.title', href: 'users_path'},
         ]
     }
+  end
+
+  def self.sitemap
+    []
   end
 end
