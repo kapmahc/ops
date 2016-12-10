@@ -36,6 +36,7 @@ zh-CN:
         title: 搜索引擎
         google_verify_code: 谷歌ID
         baidu_verify_code: 百度ID
+        ping: 通知搜索引擎重新抓取索引
       status:
         title: 当前状态
       jobs:

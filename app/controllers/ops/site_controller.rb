@@ -80,5 +80,12 @@ module Ops
     def status
       @db = Rails.configuration.database_configuration[Rails.env]
     end
+
+    def ping
+      SitemapGenerator::Sitemap.default_host = "https://#{ENV['HOST']}"
+      SitemapGenerator::Sitemap.ping_search_engines
+      
+      redirect_to :back
+    end
   end
 end

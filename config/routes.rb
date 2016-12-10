@@ -15,6 +15,7 @@ Ops::Engine.routes.draw do
     resources :notices, except: :show
     resources :leave_words, only:[:index, :destroy]
 
+    %w(ping).each {|e| post "site/#{e}"}
     %w(status).each {|e| get "site/#{e}"}
     %w(info seo engines).each do |e|
       get "site/#{e}"
