@@ -1,5 +1,10 @@
 require_dependency 'ops/application_controller'
 
+require 'forum/version'
+require 'ops/version'
+require 'shop/version'
+require 'reading/version'
+
 module Ops
   class SiteController < ApplicationController
     def info
